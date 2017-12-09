@@ -1,38 +1,55 @@
-                                  ffff&""b&""b&""b&""b&""b&""bffffwwww÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿwwwwþÿÿÿÿ"""ˆˆˆ"""ÿÿÿÿÿÿÿðÿÿðÿÿÿïî""ÿîˆˆðî"‚ðîÿðÿÿðððððððð                                                                                                                                                                                                                                                                                                                                                                                                ÿÿÿˆˆˆˆˆˆøÿˆˆˆ/"""ÿ ðÿþÿÿþUUUUVffVVUUVVVVVVVUVVfVVVUUUffffÿÿÿˆˆˆˆˆˆøÿˆˆˆ/"""ÿ ðÿþÿÿþÿ ÿˆˆðïˆðîˆˆðîˆˆðî""ÿî ðïîÿÿîî                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     [ -- title:  Bit Maze
+                                  ffff&""b&""b&""b&""b&""b&""bffffwwww÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿwwwwþÿÿÿÿ"""ˆˆˆ"""ÿÿÿÿÿÿÿðÿÿðÿÿÿïî""ÿîˆˆðî"‚ðîÿðÿÿðððððððð                                                                                                                                                                                                                                                                                                                                                                                                ÿÿÿˆˆˆˆˆˆøÿˆˆˆ/"""ÿ ðÿþÿÿþUUUUVffVVUUVVVVVVVUVVfVVVUUUffffÿÿÿˆˆˆˆˆˆøÿˆˆˆ/"""ÿ ðÿþÿÿþÿ ÿˆˆðïˆðîˆˆðîˆˆðî""ÿî ðïîÿÿîî                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ‰ -- title:  Bit Maze
 -- author: ewpratten
 -- desc:   a maze game
 -- script: lua
 
 -- set time and position --
 t=0
-x=1
-y=1
+p={
+x=1,
+y=1,
+vx=0,
+vy=0,
+}
 
 xo=228
 yo=126
+
 
 function TIC()
 -- test if player is on objective --
 	if x==xo and y==yo then cls(0) end
 -- Movement --
-	if btn(0) then y=y-1 end
-	if btn(1) then y=y+1 end
-	if btn(2) then x=x-1 end
-	if btn(3) then x=x+1 end
+if btn(2) then p.vx=-1
+        elseif btn(3) then p.vx=1
+    elseif btn(0) then p.vy=-1
+				elseif btn(1) then p.vy=1
+				    else p.vx=0 p.vy=0
+    end
+				
+	--if btn(0) then p.vy=-1 end
+	--if btn(1) then p.vy=1 end
+	--if btn(2) then p.vx=-1 end
+	--if btn(3) then p.vx=1 end
+	
+-- Velocity to movement --
+	p.x=p.x+p.vx
+ p.y=p.y+p.vy
 
 -- draw background --
 	cls(13)
 -- draw sprite --
-	spr(1,x,y,1,1)
+	spr(1,p.x,p.y,1,1)
 	spr(18,xo,yo,1,1)
 -- increment time --
 	t=t+1
 	
 -- Debug --
-local string=x
+local string=p.x
 string= string .. ", "
-string= string .. y
+string= string .. p.y
 local width=print(string,0,-6)
+-- Comment out following line to disable --
 print(string,(240-width)//2,(136-6)//2)
 end
 	>                                                              
