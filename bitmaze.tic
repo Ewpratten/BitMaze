@@ -1,0 +1,27 @@
+                                  ffff&""b&""b&""b&""b&""b&""bffffwwww÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿwwwwþÿÿÿÿ"""ˆˆˆ"""ÿÿÿÿÿÿÿðÿÿðÿÿÿïî""ÿîˆˆðî"‚ðîÿðÿÿðððððððð                                                                                                                                                                                                                                                                                                                                                                                                ÿÿÿˆˆˆˆˆˆøÿˆˆˆ/"""ÿ ðÿþÿÿþUUUUVVVVUUUUVVVVUUUUVVVVUUUUVVVVÿÿÿˆˆˆˆˆˆøÿˆˆˆ/"""ÿ ðÿþÿÿþÿ ÿˆˆðïˆðîˆˆðîˆˆðî""ÿî ðïîÿÿîî                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     m -- title:  Bit Maze
+-- author: ewpratten
+-- desc:   a maze game
+-- script: lua
+
+t=0
+x=96
+y=24
+
+function TIC()
+-- tset if player is on objective --
+
+-- Movement --
+	if btn(0) then y=y-1 end
+	if btn(1) then y=y+1 end
+	if btn(2) then x=x-1 end
+	if btn(3) then x=x+1 end
+
+-- draw background --
+	cls(13)
+-- draw sprite --
+	spr(1,x,y,1,1)
+-- increment time --
+	t=t+1
+end
+	>                                                              
+0      ÿÿÿÿ    ÿÿÿÿ2Tv˜ºÜþïÍ«‰gE#2Tv˜ºÜþ2Tv˜ºÜþ0  D$404mNJN…L04e$ÐFHuqaY}ÎÒ},…•¡mª,Òª™mÂÊÚÔ^ÞîÖ
